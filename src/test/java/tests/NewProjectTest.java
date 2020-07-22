@@ -70,17 +70,5 @@ public class NewProjectTest extends BaseTest {
         newProjectPage
                 .clickEditButton()
                 .verifyTotalNumberDomains(1);
-
-
-
-
     }
-
-
-
-
-
-
-
-
 }

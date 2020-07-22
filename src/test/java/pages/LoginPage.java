@@ -56,6 +56,4 @@ public class LoginPage extends BasePage {
         assertEquals(text, expectedText);
         return this;
     }
-
-
 }

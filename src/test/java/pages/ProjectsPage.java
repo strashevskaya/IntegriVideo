@@ -3,11 +3,15 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class ProjectsPage extends BasePage {
 
     private static final String PROJECTS_PAGE_URL = "https://dev.integrivideo.com/app/projects";
-    private static final By ADD_PROJECT_BUTTON = By.cssSelector(".project.new");
-    private static final By CREATED_PROJECT_D_LOCATOR = By.xpath("//div[text()='Q']");
+    private static final By CREATE_PROJECT_BUTTON = By.cssSelector("//button[@class='btn'");
+    private static final By ADD_PROJECT_LINK = By.xpath("//*[@href='/app/projects/new']");
+    private static final By ADDED_PROJECT = By.xpath("//div[@class='project']");
+    private static final By PROJECT_LOCATOR = By.xpath("//span[contains(text(),'active')]");
 
     public ProjectsPage(WebDriver driver) {
         super(driver);
@@ -26,10 +30,21 @@ public class ProjectsPage extends BasePage {
     }
 
     public void clickAddProjectButton() {
-        driver.findElement(ADD_PROJECT_BUTTON).click();
+        driver.findElement(ADD_PROJECT_LINK).click();
     }
-    public void clickOnProject() {
-        driver.findElement(CREATED_PROJECT_D_LOCATOR).click();
+    public ProjectsPage clickOnProjectCreated(int projectNumber) {
+        driver.findElements(ADDED_PROJECT).get(projectNumber - 1).click();
+        return this;
     }
 
+    public int getNumberOfAddedProjects() {
+        int numberOfAddedProjects = driver.findElements(ADDED_PROJECT).size();
+        return numberOfAddedProjects;
+    }
+
+    public ProjectsPage verifyNumberOfCreatedProjects(int expectedNumber) {
+        int actualNumber = driver.findElements(ADDED_PROJECT).size();
+        assertEquals(actualNumber, expectedNumber);
+        return this;
+    }
 }
