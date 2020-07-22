@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
@@ -13,7 +14,7 @@ public class BaseTest {
     ProjectsPage projectsPage;
     NewProjectPage newProjectPage;
     ProjectDetailsPage projectDetailsPage;
-    ComponentDetailsPage componentDetailsPage;
+    BillingPage billingPage;
     ChatPage chatPage;
     WebDriver driver;
 
@@ -28,8 +29,8 @@ public class BaseTest {
         projectsPage = new ProjectsPage(driver);
         newProjectPage = new NewProjectPage(driver);
         projectDetailsPage = new ProjectDetailsPage(driver);
-        componentDetailsPage = new ComponentDetailsPage(driver);
         chatPage = new ChatPage(driver);
+        billingPage = new BillingPage(driver);
 
     }
 

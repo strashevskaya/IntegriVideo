@@ -6,11 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class LoginPage extends BasePage {
 
     private static final String URL = "https://dev.integrivideo.com/login";
+    private static final By MESSAGE_NOTIFICATION = By.xpath("//span[@data-notify='message']");
 
     @FindBy(name = "email")
     private WebElement emailInput;
@@ -44,14 +45,15 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-
     public ProjectsPage verifyLoginSuccess() {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".project.new")));
         return new ProjectsPage(driver);
     }
 
-    public LoginPage verifyErrorMessageIsDisplayed() {
+    public LoginPage verifyErrorMessageIsDisplayed(String expectedText) {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("[role='alert']"))));
+        String text = driver.findElement(MESSAGE_NOTIFICATION).getText();
+        assertEquals(text, expectedText);
         return this;
     }
 
