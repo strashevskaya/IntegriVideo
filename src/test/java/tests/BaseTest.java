@@ -18,7 +18,6 @@ public class BaseTest {
     BillingPage billingPage;
     WebDriver driver;
 
-
     @BeforeMethod
     public void setDriver() {
         driver = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
