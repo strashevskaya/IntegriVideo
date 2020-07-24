@@ -14,7 +14,7 @@ public class ProjectDetailsPage extends BasePage {
     private static final By COMPONENT_NAME_INPUT = By.cssSelector("[name='name']");
     private static final By CREATE_BUTTON = By.xpath("//div//button[text()='Create']");
     private static final By CREATED_COMPONENT = By.xpath("//div[@class='component']");
-    private static final By COMPONENT_TYPE = By.xpath("//input[@name='type']");
+    private static final By COMPONENT_TYPE = By.xpath("//select[@data-select2-id='1']");
     private static final By UPDATE_BUTTON = By.xpath("//div//button[text()='Update']");
 
     public ProjectDetailsPage(WebDriver driver) {
