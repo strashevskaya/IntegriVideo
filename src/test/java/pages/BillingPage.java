@@ -33,7 +33,7 @@ public class BillingPage extends BasePage {
 
     @Override
     public BillingPage isPageOpened() {
-        waitForElementVisibility(By.xpath("//button[@class='btn']"));
+        waitForElementVisibility(By.xpath("//*[contains(text(), 'Add new')]"));
         return this;
     }
 
