@@ -32,6 +32,6 @@ public class ProjectDetailsTest extends BaseTest {
                 .editComponent("AQAQ")
                 .verifyComponentFields("Video Chat", "AQAQ");
     }
-    }
+}
 
 

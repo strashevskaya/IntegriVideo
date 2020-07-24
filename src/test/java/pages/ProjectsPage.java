@@ -1,8 +1,6 @@
 package pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import static org.testng.AssertJUnit.assertEquals;
 
 public class ProjectsPage extends BasePage {
@@ -32,6 +30,7 @@ public class ProjectsPage extends BasePage {
     public void clickAddProjectButton() {
         driver.findElement(ADD_PROJECT_LINK).click();
     }
+
     public ProjectsPage clickOnProjectCreated(int projectNumber) {
         driver.findElements(ADDED_PROJECT).get(projectNumber - 1).click();
         return this;
@@ -47,4 +46,6 @@ public class ProjectsPage extends BasePage {
         assertEquals(actualNumber, expectedNumber);
         return this;
     }
+
 }
+

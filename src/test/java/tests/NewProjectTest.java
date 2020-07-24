@@ -1,5 +1,4 @@
 package tests;
-
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 
@@ -7,8 +6,7 @@ public class NewProjectTest extends BaseTest {
 
     @Test
     @Description("Creating new project")
-    public void createProject(){
-
+    public void createProject() {
         loginPage
                 .openPage()
                 .isPageOpened()
@@ -31,7 +29,7 @@ public class NewProjectTest extends BaseTest {
         loginPage
                 .openPage()
                 .isPageOpened()
-                .login("kristina@mailinator.com","password123");
+                .login("kristina@mailinator.com", "password123");
         projectsPage
                 .openPage()
                 .isPageOpened()
@@ -49,7 +47,7 @@ public class NewProjectTest extends BaseTest {
         loginPage
                 .openPage()
                 .isPageOpened()
-                .login("kristina@mailinator.com","password123");
+                .login("kristina@mailinator.com", "password123");
         projectsPage
                 .openPage()
                 .isPageOpened()

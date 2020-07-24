@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-
 import static org.testng.AssertJUnit.assertEquals;
 
 public class NewProjectPage extends BasePage {
@@ -51,6 +50,7 @@ public class NewProjectPage extends BasePage {
         driver.findElement(CREATE_BUTTON).click();
         return this;
     }
+
     public NewProjectPage addSecondDomain(String domain){
         driver.findElements(DOMAINS_INPUT).get(1).click();
         driver.findElements(DOMAINS_INPUT).get(1).clear();
@@ -90,7 +90,7 @@ public class NewProjectPage extends BasePage {
     }
 
     public NewProjectPage clickUpdateButton() {
-       driver.findElement(UPDATE_BUTTON).click();
-       return this;
+        driver.findElement(UPDATE_BUTTON).click();
+        return this;
     }
 }
