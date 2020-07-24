@@ -67,6 +67,6 @@ public class NewProjectTest extends BaseTest {
         projectsPage.clickOnProjectCreated(projectsPage.getNumberOfAddedProjects());
         newProjectPage
                 .clickEditButton()
-                .verifyTotalNumberDomains(1);
+                .verifyTotalNumberDomains(2);
     }
 }

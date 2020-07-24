@@ -11,7 +11,7 @@ public class ProjectDetailsPage extends BasePage {
     private static final By ADD_NEW_COMPONENT_BUTTON = By.xpath("//div[@class='status']");
     private static final By EDIT_BUTTON = By.xpath("//a[text()='Edit']");
     private static final By COMPONENT_TYPE_SELECT = By.xpath("//option");
-    private static final By COMPONENT_NAME_INPUT = By.xpath("//input[@placeholder='New component']");
+    private static final By COMPONENT_NAME_INPUT = By.cssSelector("[name='name']");
     private static final By CREATE_BUTTON = By.xpath("//div//button[text()='Create']");
     private static final By CREATED_COMPONENT = By.xpath("//div[@class='component']");
     private static final By COMPONENT_TYPE = By.xpath("//input[@name='type']");
